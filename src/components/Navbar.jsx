@@ -1,14 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import React from "react";
+import styled from "styled-components";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   position: sticky;
-  top: 0;
+  /* top: 0px; */
   // Anonymouse function, dass 'theme' destructiert
   background-color: ${({ theme }) => theme.bgLighter};
   /* background-color: aqua; */
+  height: 56px;
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -37,6 +39,8 @@ const Search = styled.div`
 const Input = styled.input`
   border: none;
   background-color: transparent;
+  outline: none;
+  width: 100%;
 `;
 
 const Button = styled.button`
@@ -60,10 +64,12 @@ const Navbar = () => {
           <Input placeholder="Search" />
           <SearchOutlinedIcon />
         </Search>
-        <Button>
-          <AccountCircleOutlinedIcon />
-          Sign in
-        </Button>
+        <Link to="signin" style={{ textDecoration: "none" }}>
+          <Button>
+            <AccountCircleOutlinedIcon />
+            Sign in
+          </Button>
+        </Link>
       </Wrapper>
     </Container>
   );
