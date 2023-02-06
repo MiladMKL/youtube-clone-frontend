@@ -5,6 +5,7 @@ import ThumbDownOutlinedIcon from '@mui/icons-material/ThumbDownOutlined';
 import ReplyOutlinedIcon from '@mui/icons-material/ReplyOutlined';
 import SaveAltOutlinedIcon from '@mui/icons-material/SaveAltOutlined';
 import Comments from '../components/Comments.jsx';
+import Card from '../components/Card.jsx';
 
 // Container => das ganze View
 // Wrapper => Das was im Container drin liegt - Ist auch das Container für Child Elemente wie Button, etc.
@@ -164,8 +165,10 @@ const Video = () => {
         <Hr />
         <Comments />
       </Content>
-
-      <Recommendation>Recommendation</Recommendation>
+      <Recommendation>
+        <Card type="sm" />
+        <Card type="sm" />
+      </Recommendation>
     </Container>
   );
 };
